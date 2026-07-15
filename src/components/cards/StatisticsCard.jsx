@@ -24,7 +24,7 @@ const data = [
 
 function StatisticsCard() {
   return (
-    <div className="relative bg-white rounded-[24px] border border-[#ECECEC] h-[402px] px-8 pt-7 pb-5">
+    <div className="relative overflow-hidden bg-white rounded-2xl border border-[#ECECEC] min-h-[402px] p-6">
 
       {/* Header */}
       <div className="flex justify-between items-center mb-4">
@@ -42,7 +42,7 @@ function StatisticsCard() {
       </div>
 
       {/* Floating Tooltip */}
-      <div className="absolute left-[115px] top-[58px] bg-white rounded-3xl shadow-xl px-7 py-4 z-20">
+      <div className="absolute left-1/2 top-6 -translate-x-1/2 bg-white rounded-3xl shadow-xl px-6 py-4 z-20 max-w-[90%]">
 
         <div className="flex items-center gap-5">
 

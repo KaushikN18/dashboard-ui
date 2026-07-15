@@ -8,7 +8,7 @@ import Transactions from "../components/cards/Transactions";
 
 function Dashboard() {
   return (
-    <div className="space-y-6">
+    <div className="page-container space-y-6 overflow-x-hidden">
 
       {/* Heading */}
       <h1 className="text-[34px] font-semibold text-[#2F3442]">
@@ -19,19 +19,19 @@ function Dashboard() {
       <OverviewCard />
 
       {/* Statistics + Analytics */}
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
         <StatisticsCard />
         <AnalyticsCard />
       </div>
 
       {/* Sales + Horizontal Stats */}
-      <div className="grid grid-cols-[350px_1fr] gap-6">
+      <div className="grid grid-cols-1 xl:grid-cols-[320px_1fr] gap-6">
         <SalesCard />
         <HorizontalStats />
       </div>
 
       {/* Orders + Transactions */}
-      <div className="grid grid-cols-[2fr_1fr] gap-6">
+      <div className="grid grid-cols-1 xl:grid-cols-[2fr_1fr] gap-6">
         <LastOrders />
         <Transactions />
       </div>

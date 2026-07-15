@@ -16,14 +16,10 @@ function Layout() {
         <Header />
 
         {/* Page Content */}
-        <main className="flex-1 overflow-auto bg-[#F7F8FA] p-8">
-
-          <div className="min-w-[1400px] min-h-full">
-
+        <main className="flex-1 bg-[#F7F8FA] overflow-y-auto overflow-x-hidden">
+          <div className="p-8 max-w-full">
             <Outlet />
-
           </div>
-
         </main>
 
       </div>

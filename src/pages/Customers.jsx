@@ -5,7 +5,7 @@ import CustomerPagination from "../components/customers/CustomerPagination";
 
 function Customers() {
   return (
-    <div className="space-y-6">
+    <div className="page-container space-y-6">
 
       <CustomerHeader />
 

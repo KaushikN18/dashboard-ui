@@ -5,7 +5,7 @@ import ChatInput from "../components/chat/ChatInput";
 
 function Chat() {
   return (
-    <div className="h-[calc(100vh-120px)] flex gap-6">
+    <div className="page-container min-h-[calc(100vh-120px)] flex gap-6 overflow-hidden">
 
       {/* Sidebar */}
 

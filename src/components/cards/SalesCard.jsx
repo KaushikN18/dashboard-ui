@@ -9,33 +9,31 @@ const COLORS = ["#2E9E44", "#53CEC5"];
 
 function SalesCard() {
   return (
-    <div className="bg-white rounded-3xl border border-[#ECECEC] p-8 h-[390px]">
+    <div className="w-full overflow-hidden bg-white rounded-3xl border border-[#ECECEC] p-6 min-h-[390px]">
 
-      <h2 className="text-[22px] font-semibold text-[#2F3442]">
+      <h2 className="text-2xl font-semibold text-[#2F3442]">
         Sales
       </h2>
 
-      <div className="h-[210px] mt-5 relative">
+      <div className="relative h-[210px] mt-5">
 
-        <ResponsiveContainer>
+        <ResponsiveContainer width="100%" height="100%">
 
           <PieChart>
 
             <Pie
               data={data}
-              innerRadius={70}
-              outerRadius={90}
+              innerRadius={60}
+              outerRadius={80}
               dataKey="value"
               stroke="none"
             >
-
               {data.map((item, index) => (
                 <Cell
                   key={index}
                   fill={COLORS[index]}
                 />
               ))}
-
             </Pie>
 
           </PieChart>
@@ -44,11 +42,11 @@ function SalesCard() {
 
         <div className="absolute inset-0 flex flex-col items-center justify-center">
 
-          <h1 className="text-[38px] font-bold">
+          <h1 className="text-3xl font-bold text-[#2F3442]">
             3.500
           </h1>
 
-          <p className="text-gray-400">
+          <p className="text-sm text-[#98A2B3]">
             Total
           </p>
 
@@ -56,15 +54,17 @@ function SalesCard() {
 
       </div>
 
-      <div className="space-y-5 mt-3">
+      <div className="space-y-5 mt-4">
 
-        <div className="flex justify-between">
+        <div className="flex items-center justify-between">
 
-          <div className="flex gap-2 items-center">
+          <div className="flex items-center gap-2">
 
             <div className="w-3 h-3 rounded-full bg-[#2E9E44]" />
 
-            Current Week
+            <span className="text-[#687284]">
+              Current Week
+            </span>
 
           </div>
 
@@ -80,13 +80,15 @@ function SalesCard() {
 
         </div>
 
-        <div className="flex justify-between">
+        <div className="flex items-center justify-between">
 
-          <div className="flex gap-2 items-center">
+          <div className="flex items-center gap-2">
 
             <div className="w-3 h-3 rounded-full bg-[#53CEC5]" />
 
-            Last Week
+            <span className="text-[#687284]">
+              Last Week
+            </span>
 
           </div>
 

@@ -86,63 +86,66 @@ const products = [
 
 function ProductsTable() {
   return (
-    <div className="bg-white rounded-[24px] border border-[#ECECEC] shadow-sm overflow-hidden">
+    <div className="w-full bg-white rounded-3xl border border-[#ECECEC] shadow-sm overflow-hidden">
 
-      <table className="w-full border-collapse">
+      <div className="overflow-x-auto">
 
-        <thead className="bg-[#FAFBFC] border-b border-[#ECECEC]">
+        <table className="w-full min-w-[900px] table-auto border-collapse">
 
-          <tr className="h-[64px] text-[13px] font-semibold uppercase tracking-wide text-[#98A2B3]">
+          <thead className="bg-[#FAFBFC] border-b border-[#ECECEC]">
 
-            <th className="w-16 px-6">
-              <input
-                type="checkbox"
-                className="w-5 h-5 accent-[#2F9E44]"
-              />
-            </th>
+            <tr className="h-16 text-[13px] font-semibold uppercase tracking-wide text-[#98A2B3]">
 
-            <th className="text-left px-2">
-              Product Name
-            </th>
+              <th className="w-16 px-6">
+                <input
+                  type="checkbox"
+                  className="w-5 h-5 accent-[#2F9E44]"
+                />
+              </th>
 
-            <th className="text-left w-[140px]">
-              Product No.
-            </th>
+              <th className="text-left px-4 whitespace-nowrap">
+                Product Name
+              </th>
 
-            <th className="text-left w-[140px]">
-              Category
-            </th>
+              <th className="text-left px-4 whitespace-nowrap">
+                Product No.
+              </th>
 
-            <th className="text-left w-[120px]">
-              Date
-            </th>
+              <th className="text-left px-4 whitespace-nowrap">
+                Category
+              </th>
 
-            <th className="text-left w-[120px]">
-              Price
-            </th>
+              <th className="text-left px-4 whitespace-nowrap">
+                Date
+              </th>
 
-            <th className="text-left w-[150px]">
-              Status
-            </th>
+              <th className="text-left px-4 whitespace-nowrap">
+                Price
+              </th>
 
-            <th className="w-16"></th>
+              <th className="text-left px-4 whitespace-nowrap">
+                Status
+              </th>
 
-          </tr>
+              <th className="w-16"></th>
 
-        </thead>
+            </tr>
 
-        <tbody>
+          </thead>
 
-          {products.map((product) => (
+          <tbody>
+                      {products.map((product) => (
             <ProductRow
               key={product.id}
               product={product}
             />
           ))}
 
-        </tbody>
+          </tbody>
 
-      </table>
+        </table>
+
+      </div>
 
       <Pagination />
 

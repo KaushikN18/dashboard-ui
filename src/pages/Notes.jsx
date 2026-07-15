@@ -4,7 +4,7 @@ import NotesGrid from "../components/notes/NotesGrid";
 
 function Notes() {
   return (
-    <div className="space-y-6">
+    <div className="page-container space-y-6">
 
       <NotesHeader />
 

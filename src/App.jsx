@@ -16,18 +16,21 @@ import Task from "./pages/Task";
 import Projects from "./pages/Projects";
 import Profile from "./pages/Profile";
 
-
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
+
+          {/* Dashboard */}
           <Route index element={<Dashboard />} />
 
+          {/* E-Commerce */}
           <Route path="products" element={<Products />} />
           <Route path="orders" element={<Orders />} />
           <Route path="customers" element={<Customers />} />
 
+          {/* Other Pages */}
           <Route path="calendar" element={<Calendar />} />
           <Route path="mail" element={<Mail />} />
           <Route path="chat" element={<Chat />} />
@@ -35,10 +38,9 @@ function App() {
           <Route path="notes" element={<Notes />} />
           <Route path="contacts" element={<Contacts />} />
           <Route path="task" element={<Task />} />
-          <Route path="/projects" element={<Projects />} />
+          <Route path="projects" element={<Projects />} />
           <Route path="profile" element={<Profile />} />
-          <Route index element={<Dashboard />} />
-          
+
         </Route>
       </Routes>
     </BrowserRouter>

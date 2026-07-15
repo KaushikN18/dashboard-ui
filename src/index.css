@@ -5,3 +5,73 @@ body {
   background: #f5f7fb;
   font-family: Inter, sans-serif;
 }
+
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  display: block;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+input,
+select,
+textarea {
+  max-width: 100%;
+}
+
+main {
+  overflow-x: hidden;
+}
+
+/* Every page */
+
+.page-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Cards */
+
+.dashboard-card {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Tables */
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Responsive grids */
+
+.grid {
+  min-width: 0;
+}
+
+/* Flex items */
+
+.flex > * {
+  min-width: 0;
+}

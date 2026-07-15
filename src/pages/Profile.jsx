@@ -6,7 +6,7 @@ import FeedPost from "../components/profile/FeedPost";
 
 function Profile() {
   return (
-    <div className="bg-[#F7F8FA] min-h-screen p-8">
+    <div className="page-container bg-[#F7F8FA] min-h-screen p-8 overflow-x-hidden">
 
       {/* Banner */}
       <Banner />

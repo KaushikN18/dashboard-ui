@@ -2,10 +2,10 @@ import { FiMoreVertical } from "react-icons/fi";
 
 function ProductRow({ product }) {
   return (
-    <tr className="h-[64px] border-b border-[#F2F2F2] hover:bg-[#FAFBFC] transition">
+    <tr className="border-b border-[#F2F2F2] hover:bg-[#FAFBFC] transition">
 
       {/* Checkbox */}
-      <td className="px-5">
+      <td className="px-5 py-4">
         <input
           type="checkbox"
           defaultChecked={product.checked}
@@ -14,58 +14,53 @@ function ProductRow({ product }) {
       </td>
 
       {/* Product */}
-      <td className="text-[17px] font-medium text-[#3D4654]">
-        {product.name}
+      <td className="px-4 py-4 max-w-[280px]">
+        <p
+          className="text-[15px] font-medium text-[#3D4654] truncate"
+          title={product.name}
+        >
+          {product.name}
+        </p>
       </td>
 
       {/* Number */}
-      <td className="text-[#98A2B3]">
+      <td className="px-4 py-4 text-[#98A2B3] whitespace-nowrap">
         {product.number}
       </td>
 
       {/* Category */}
-      <td className="text-[#596273]">
+      <td className="px-4 py-4 text-[#596273] whitespace-nowrap">
         {product.category}
       </td>
 
       {/* Date */}
-      <td className="text-[#98A2B3]">
+      <td className="px-4 py-4 text-[#98A2B3] whitespace-nowrap">
         {product.date}
       </td>
 
       {/* Price */}
-      <td className="font-medium text-[#3D4654]">
+      <td className="px-4 py-4 font-medium text-[#3D4654] whitespace-nowrap">
         {product.price}
       </td>
 
       {/* Status */}
-      <td>
-
+      <td className="px-4 py-4 whitespace-nowrap">
         {product.status === "Available" ? (
-
-          <span className="px-4 py-2 rounded-xl bg-[#EDF9EF] text-[#2F9E44] text-[14px] font-medium">
+          <span className="inline-block px-3 py-1 rounded-lg bg-[#EDF9EF] text-[#2F9E44] text-sm font-medium">
             Available
           </span>
-
         ) : (
-
-          <span className="px-4 py-2 rounded-xl bg-[#FFF3E8] text-[#FF8A00] text-[14px] font-medium">
+          <span className="inline-block px-3 py-1 rounded-lg bg-[#FFF3E8] text-[#FF8A00] text-sm font-medium">
             Disabled
           </span>
-
         )}
-
       </td>
 
       {/* Menu */}
-      <td>
-
+      <td className="px-4 py-4 text-center">
         <button className="text-[#98A2B3] hover:text-black">
-
-          <FiMoreVertical size={20} />
-
+          <FiMoreVertical size={18} />
         </button>
-
       </td>
 
     </tr>

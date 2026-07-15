@@ -4,7 +4,7 @@ import ContactsGrid from "../components/contacts/ContactsGrid";
 
 function Contacts() {
   return (
-    <div className="space-y-6">
+    <div className="page-container space-y-6">
 
       <ContactsHeader />
 
