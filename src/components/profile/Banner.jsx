@@ -8,74 +8,78 @@ import { profile } from "./data";
 
 function Banner() {
   return (
-    <div className="relative">
+    <div className="relative mb-28">
 
       {/* Cover */}
-      <div className="h-[270px] rounded-[22px] overflow-hidden">
+      <div className="h-[260px] rounded-[24px] overflow-hidden">
         <img
           src={profile.cover}
-          alt=""
+          alt="Cover"
           className="w-full h-full object-cover"
         />
       </div>
 
       {/* Profile Card */}
-      <div className="absolute left-7 right-7 -bottom-20">
+      <div className="absolute left-8 right-8 -bottom-16">
 
-        <div className="bg-white rounded-[22px] shadow-md h-[170px] flex items-center px-10">
+        <div className="bg-white rounded-[26px] shadow-lg border border-[#ECECEC] px-8 py-6 flex items-center">
 
           {/* Avatar */}
-          <div className="w-[160px] h-[160px] rounded-[38px] overflow-hidden border-[6px] border-white shadow-lg -mt-16 bg-white">
+          <div className="shrink-0">
 
-            <img
-              src={profile.avatar}
-              alt=""
-              className="w-full h-full object-cover"
-            />
+            <div className="w-[130px] h-[130px] rounded-[28px] overflow-hidden border-[6px] border-white shadow-lg -mt-20 bg-white">
+
+              <img
+                src={profile.avatar}
+                alt=""
+                className="w-full h-full object-cover"
+              />
+
+            </div>
 
           </div>
 
           {/* Name */}
-          <div className="ml-10 flex-1">
+          <div className="ml-8 flex-1 min-w-[320px]">
 
-            <h1 className="text-[42px] font-semibold text-[#2F3442] leading-none">
+            <h1 className="text-[46px] font-bold leading-none text-[#2F3442] whitespace-nowrap">
               {profile.name}
             </h1>
 
-            <p className="mt-3 text-[22px] text-[#98A2B3]">
+            <p className="mt-3 text-[20px] text-[#98A2B3]">
               {profile.role}
             </p>
 
-            <div className="flex gap-5 mt-6 text-[24px] text-[#687284]">
+            <div className="flex items-center gap-6 mt-6 text-[22px] text-[#687284]">
 
-              <FiFacebook />
+              <FiFacebook className="cursor-pointer hover:text-[#2F9E44]" />
 
-              <FiTwitter />
+              <FiTwitter className="cursor-pointer hover:text-[#2F9E44]" />
 
-              <FiInstagram />
+              <FiInstagram className="cursor-pointer hover:text-[#2F9E44]" />
 
             </div>
 
           </div>
 
           {/* Divider */}
-          <div className="w-px h-[120px] bg-[#ECECEC] mx-10"></div>
+          <div className="w-px h-[110px] bg-[#ECECEC] mx-8"></div>
 
           {/* Contact */}
-          <div className="grid grid-cols-2 gap-x-24 gap-y-8">
+          <div className="grid grid-cols-2 gap-x-20 gap-y-7">
 
             <div>
-              <p className="text-[13px] uppercase tracking-wider text-[#98A2B3]">
+              <p className="text-[12px] uppercase tracking-wider text-[#98A2B3]">
                 Email
               </p>
 
-              <p className="mt-2 text-[18px] text-[#2F3442]">
+              <p className="mt-2 text-[18px] text-[#2F3442] whitespace-nowrap">
                 {profile.email}
               </p>
             </div>
 
             <div>
-              <p className="text-[13px] uppercase tracking-wider text-[#98A2B3]">
+              <p className="text-[12px] uppercase tracking-wider text-[#98A2B3]">
                 Birthday
               </p>
 
@@ -85,7 +89,7 @@ function Banner() {
             </div>
 
             <div>
-              <p className="text-[13px] uppercase tracking-wider text-[#98A2B3]">
+              <p className="text-[12px] uppercase tracking-wider text-[#98A2B3]">
                 Phone
               </p>
 
@@ -95,7 +99,7 @@ function Banner() {
             </div>
 
             <div>
-              <p className="text-[13px] uppercase tracking-wider text-[#98A2B3]">
+              <p className="text-[12px] uppercase tracking-wider text-[#98A2B3]">
                 Location
               </p>
 

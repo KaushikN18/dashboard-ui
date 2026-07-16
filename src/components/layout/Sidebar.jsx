@@ -18,7 +18,6 @@ import {
 
 function Sidebar() {
   const [openMenu, setOpenMenu] = useState(true);
-  const [openDashboard, setOpenDashboard] = useState(true);
 
   const location = useLocation();
 
@@ -36,6 +35,7 @@ function Sidebar() {
 
       {/* Logo */}
       <div className="flex items-center gap-3 px-5 pt-5 pb-4">
+
         <img
           src={flowerLogo}
           alt="Flower"
@@ -45,11 +45,14 @@ function Sidebar() {
         <h2 className="text-[18px] font-semibold tracking-wide text-[#2C2C2C]">
           FLOWER
         </h2>
+
       </div>
 
       {/* Search */}
       <div className="px-4 mt-1">
+
         <div className="flex items-center h-10 rounded-lg bg-[#F7F7F9] px-3">
+
           <FiSearch className="text-[#A8A8A8]" />
 
           <input
@@ -57,7 +60,9 @@ function Sidebar() {
             placeholder="Search anything"
             className="ml-2 flex-1 bg-transparent outline-none text-[13px] placeholder:text-[#A8A8A8]"
           />
+
         </div>
+
       </div>
 
       {/* Main Menu */}
@@ -68,49 +73,38 @@ function Sidebar() {
         </p>
 
         <div className="px-3">
-
-          {/* Dashboard */}
-         
-
-        <button
-          onClick={() => setOpenDashboard(!openDashboard)}
-          className={`w-full flex items-center justify-between px-4 py-2.5 rounded-lg transition ${
-            location.pathname === "/" || location.pathname === "/profile"
-              ? "bg-[#B9F26D] text-[#222]"
-              : "text-[#555] hover:bg-gray-100"
-          }`}
-        >
-          <div className="flex items-center gap-3 text-[13px] font-medium">
-            <FiHome size={16} />
-            Dashboard
-          </div>
-
-          {openDashboard ? (
-            <FiChevronDown size={16} />
-          ) : (
-            <FiChevronRight size={16} />
-          )}
-        </button>
-          {openDashboard && (
-        <div className="ml-8 mt-3">
+                    {/* Dashboard */}
           <NavLink
-            to="/profile"
+            to="/"
+            end
             className={({ isActive }) =>
-              `flex items-center gap-2 text-[13px] transition ${
+              `flex items-center gap-3 px-4 py-2.5 rounded-lg text-[13px] font-medium transition-all ${
                 isActive
-                  ? "font-semibold text-[#2F9E44]"
-                  : "text-[#666] hover:text-[#2F9E44]"
+                  ? "bg-[#B9F26D] text-[#222]"
+                  : "text-[#555] hover:bg-gray-100"
               }`
             }
           >
-      <span className="w-1.5 h-1.5 rounded-full bg-current"></span>
-      Profile
-    </NavLink>
+            <FiHome size={16} />
+            Dashboard
+          </NavLink>
 
-  </div>
-)}
+          {/* Profile */}
+          <NavLink
+            to="/profile"
+            className={({ isActive }) =>
+              `mt-2 flex items-center gap-3 px-4 py-2.5 rounded-lg text-[13px] font-medium transition-all ${
+                isActive
+                  ? "bg-[#B9F26D] text-[#222]"
+                  : "text-[#555] hover:bg-gray-100"
+              }`
+            }
+          >
+            <FiUsers size={16} />
+            Profile
+          </NavLink>
 
-                   {/* E-Commerce */}
+          {/* E-Commerce */}
           <button
             onClick={() => setOpenMenu(!openMenu)}
             className={`mt-2 w-full flex items-center justify-between px-4 py-2.5 rounded-lg transition-all ${
@@ -131,7 +125,7 @@ function Sidebar() {
             )}
           </button>
 
-          {/* Sub Menu */}
+          {/* E-Commerce Sub Menu */}
           {(openMenu || isEcommerceActive) && (
             <div className="ml-8 mt-3 space-y-3">
 
@@ -179,10 +173,11 @@ function Sidebar() {
 
             </div>
           )}
-
-          {/* Other Menu */}
+                    {/* Other Menu */}
           <div className="mt-6 space-y-1">
-                        <NavLink
+
+            {/* Calendar */}
+            <NavLink
               to="/calendar"
               className={({ isActive }) =>
                 `flex items-center justify-between px-4 py-2.5 rounded-lg text-[13px] transition ${
@@ -200,6 +195,7 @@ function Sidebar() {
               <FiChevronRight size={14} />
             </NavLink>
 
+            {/* Mail */}
             <NavLink
               to="/mail"
               className={({ isActive }) =>
@@ -220,6 +216,7 @@ function Sidebar() {
               </span>
             </NavLink>
 
+            {/* Chat */}
             <NavLink
               to="/chat"
               className={({ isActive }) =>
@@ -234,6 +231,7 @@ function Sidebar() {
               Chat
             </NavLink>
 
+            {/* File Manager */}
             <NavLink
               to="/file-manager"
               className={({ isActive }) =>
@@ -248,6 +246,7 @@ function Sidebar() {
               File Manager
             </NavLink>
 
+            {/* Notes */}
             <NavLink
               to="/notes"
               className={({ isActive }) =>
@@ -262,6 +261,7 @@ function Sidebar() {
               Notes
             </NavLink>
 
+            {/* Contacts */}
             <NavLink
               to="/contacts"
               className={({ isActive }) =>
@@ -277,67 +277,69 @@ function Sidebar() {
             </NavLink>
 
           </div>
-        </div>
-      </div>
 
-      {/* Calendar List */}
-      
-    {showCalendarSection && (
-      <div className="mt-12 px-7 pb-6 overflow-y-auto">
-              <div className="flex items-center justify-between mb-5">
-
-        <p className="text-[11px] font-semibold tracking-wider text-[#A4ACB9]">
-          CALENDARS
-        </p>
-
-        <button className="w-6 h-6 rounded-full bg-[#F5F6F8] hover:bg-[#ECECEC] text-[#687284] text-sm">
-          +
-        </button>
-
-      </div>
-
-      <div className="space-y-5">
-
-        <div className="flex items-center gap-3">
-          <div className="w-3 h-3 rounded bg-[#FF6B6B]" />
-          <span className="text-[14px] text-[#555]">
-            Important
-          </span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="w-3 h-3 rounded bg-[#56C7C2]" />
-          <span className="text-[14px] text-[#555]">
-            Meeting
-          </span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="w-3 h-3 rounded bg-[#2F9E44]" />
-          <span className="text-[14px] text-[#555]">
-            Event
-          </span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="w-3 h-3 rounded bg-[#FFD54F]" />
-          <span className="text-[14px] text-[#555]">
-            Work
-          </span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="w-3 h-3 rounded bg-[#A0A8B8]" />
-          <span className="text-[14px] text-[#555]">
-            Other
-          </span>
         </div>
 
       </div>
+            {/* Calendar List */}
+      {showCalendarSection && (
+        <div className="mt-12 px-7 pb-6 overflow-y-auto">
 
-    </div>
-        )}
-  </aside>
+          <div className="flex items-center justify-between mb-5">
+
+            <p className="text-[11px] font-semibold tracking-wider text-[#A4ACB9]">
+              CALENDARS
+            </p>
+
+            <button className="w-6 h-6 rounded-full bg-[#F5F6F8] hover:bg-[#ECECEC] text-[#687284] text-sm">
+              +
+            </button>
+
+          </div>
+
+          <div className="space-y-5">
+
+            <div className="flex items-center gap-3">
+              <div className="w-3 h-3 rounded bg-[#FF6B6B]" />
+              <span className="text-[14px] text-[#555]">
+                Important
+              </span>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <div className="w-3 h-3 rounded bg-[#56C7C2]" />
+              <span className="text-[14px] text-[#555]">
+                Meeting
+              </span>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <div className="w-3 h-3 rounded bg-[#2F9E44]" />
+              <span className="text-[14px] text-[#555]">
+                Event
+              </span>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <div className="w-3 h-3 rounded bg-[#FFD54F]" />
+              <span className="text-[14px] text-[#555]">
+                Work
+              </span>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <div className="w-3 h-3 rounded bg-[#A0A8B8]" />
+              <span className="text-[14px] text-[#555]">
+                Other
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+      )}
+
+    </aside>
   );
 }
 
