@@ -11,69 +11,60 @@ function Banner() {
     <div className="relative mb-28">
 
       {/* Cover */}
-      <div className="h-[260px] rounded-[24px] overflow-hidden">
+      <div className="h-[250px] rounded-[24px] overflow-hidden">
         <img
           src={profile.cover}
-          alt="Cover"
+          alt=""
           className="w-full h-full object-cover"
         />
       </div>
 
-      {/* Profile Card */}
+      {/* Card */}
       <div className="absolute left-8 right-8 -bottom-16">
 
-        <div className="bg-white rounded-[26px] shadow-lg border border-[#ECECEC] px-8 py-6 flex items-center">
+        <div className="bg-white rounded-[24px] border border-[#ECECEC] shadow-lg px-8 py-6 flex items-center">
 
           {/* Avatar */}
           <div className="shrink-0">
-
             <div className="w-[130px] h-[130px] rounded-[28px] overflow-hidden border-[6px] border-white shadow-lg -mt-20 bg-white">
-
               <img
                 src={profile.avatar}
                 alt=""
                 className="w-full h-full object-cover"
               />
-
             </div>
-
           </div>
 
-          {/* Name */}
-          <div className="ml-8 flex-1 min-w-[320px]">
+          {/* Left Info */}
+          <div className="ml-8 w-[360px]">
 
-            <h1 className="text-[46px] font-bold leading-none text-[#2F3442] whitespace-nowrap">
+            <h1 className="text-[40px] font-bold text-[#2F3442] leading-tight">
               {profile.name}
             </h1>
 
-            <p className="mt-3 text-[20px] text-[#98A2B3]">
+            <p className="mt-2 text-[20px] text-[#98A2B3]">
               {profile.role}
             </p>
 
-            <div className="flex items-center gap-6 mt-6 text-[22px] text-[#687284]">
-
+            <div className="flex gap-6 mt-5 text-[22px] text-[#687284]">
               <FiFacebook className="cursor-pointer hover:text-[#2F9E44]" />
-
               <FiTwitter className="cursor-pointer hover:text-[#2F9E44]" />
-
               <FiInstagram className="cursor-pointer hover:text-[#2F9E44]" />
-
             </div>
 
           </div>
 
           {/* Divider */}
-          <div className="w-px h-[110px] bg-[#ECECEC] mx-8"></div>
+          <div className="w-px h-[110px] bg-[#ECECEC] mx-8 shrink-0"></div>
 
-          {/* Contact */}
-          <div className="grid grid-cols-2 gap-x-20 gap-y-7">
+          {/* Right Info */}
+          <div className="flex-1 grid grid-cols-2 gap-x-14 gap-y-6">
 
             <div>
               <p className="text-[12px] uppercase tracking-wider text-[#98A2B3]">
                 Email
               </p>
-
-              <p className="mt-2 text-[18px] text-[#2F3442] whitespace-nowrap">
+              <p className="mt-2 text-[18px] text-[#2F3442] break-all">
                 {profile.email}
               </p>
             </div>
@@ -82,7 +73,6 @@ function Banner() {
               <p className="text-[12px] uppercase tracking-wider text-[#98A2B3]">
                 Birthday
               </p>
-
               <p className="mt-2 text-[18px] text-[#2F3442]">
                 {profile.birthday}
               </p>
@@ -92,7 +82,6 @@ function Banner() {
               <p className="text-[12px] uppercase tracking-wider text-[#98A2B3]">
                 Phone
               </p>
-
               <p className="mt-2 text-[18px] text-[#2F3442]">
                 {profile.phone}
               </p>
@@ -102,7 +91,6 @@ function Banner() {
               <p className="text-[12px] uppercase tracking-wider text-[#98A2B3]">
                 Location
               </p>
-
               <p className="mt-2 text-[18px] text-[#2F3442]">
                 {profile.location}
               </p>
