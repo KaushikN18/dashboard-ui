@@ -18,6 +18,7 @@ import {
 
 function Sidebar() {
   const [openMenu, setOpenMenu] = useState(true);
+  const [openDashboard, setOpenDashboard] = useState(true);
 
   const location = useLocation();
 
@@ -69,20 +70,45 @@ function Sidebar() {
         <div className="px-3">
 
           {/* Dashboard */}
+         
+
+        <button
+          onClick={() => setOpenDashboard(!openDashboard)}
+          className={`w-full flex items-center justify-between px-4 py-2.5 rounded-lg transition ${
+            location.pathname === "/" || location.pathname === "/profile"
+              ? "bg-[#B9F26D] text-[#222]"
+              : "text-[#555] hover:bg-gray-100"
+          }`}
+        >
+          <div className="flex items-center gap-3 text-[13px] font-medium">
+            <FiHome size={16} />
+            Dashboard
+          </div>
+
+          {openDashboard ? (
+            <FiChevronDown size={16} />
+          ) : (
+            <FiChevronRight size={16} />
+          )}
+        </button>
+          {openDashboard && (
+        <div className="ml-8 mt-3">
           <NavLink
-            to="/"
-            end
+            to="/profile"
             className={({ isActive }) =>
-              `flex items-center gap-3 px-4 py-2.5 rounded-lg text-[13px] font-medium transition-all ${
+              `flex items-center gap-2 text-[13px] transition ${
                 isActive
-                  ? "bg-[#B9F26D] text-[#222]"
-                  : "text-[#555] hover:bg-gray-100"
+                  ? "font-semibold text-[#2F9E44]"
+                  : "text-[#666] hover:text-[#2F9E44]"
               }`
             }
           >
-            <FiHome size={16} />
-            Dashboard
-          </NavLink>
+      <span className="w-1.5 h-1.5 rounded-full bg-current"></span>
+      Profile
+    </NavLink>
+
+  </div>
+)}
 
                    {/* E-Commerce */}
           <button

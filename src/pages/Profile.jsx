@@ -12,24 +12,18 @@ function Profile() {
       <Banner />
 
       {/* Content */}
-      <div className="mt-28 grid grid-cols-[320px_1fr] gap-8">
+      <div className="mt-28 grid grid-cols-[320px_minmax(0,1fr)] gap-8">
 
-        {/* Left Sidebar */}
+        {/* Left Side */}
         <div className="space-y-6">
-
           <FriendsCard />
-
           <PhotosCard />
-
         </div>
 
         {/* Right Side */}
-        <div className="space-y-8">
-
+        <div className="space-y-6 min-w-0">
           <CreatePost />
-
           <FeedPost />
-
         </div>
 
       </div>
